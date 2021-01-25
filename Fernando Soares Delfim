@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu projeto To-do list - TOTVS RS</title>
+    <style>
+        body{
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário</h1>
+
+   <!--Abaixo o corpo do formulário--> 
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" name="txtn1" id="txtn1"> 
+        <label for="senha">Senha:</label>
+        <input type="text" name="txtn2" id="txtn2">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="res"></div>
+    </form>    
+    <script>
+        <!--Utilização de DOM para utilização das variáveis-->
+        function verificar(){
+            var login = document.getElementById('txtn1') 
+            var senha = document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            <!--Descrição das variáveis-->
+            var n1 = String(login.value)
+            var n2 = String(senha.value)
+            res.innerHTML += `<p>Email : 
+                <strong>${n1}</strong>.
+            </p>`
+            res.innerHTML += `<p>Senha : 
+                <strong>${n2}</strong>.
+            </p>`
+        }
+    </script>
+</body>
+</html>
